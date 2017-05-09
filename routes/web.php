@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
 
     /** Cheeses routes */
-    
+
     Route::group(['prefix' => 'cheeses'], function () {
         Route::get('/', ['as' => 'app.cheeses.list', 'uses' => 'DTCheesesController@index']);
         Route::get('/create', ['uses' => 'DTCheeseController@create']);
