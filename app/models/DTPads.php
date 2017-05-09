@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DTPads extends CoreModel
 {
-    protected $fillable;
+    protected $fillable= ['name', 'calories'];
 
     protected $table = 'dt_pads';
 }
