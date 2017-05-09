@@ -19,9 +19,9 @@ class CreateDtUsersTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('name');
-			$table->string('password');
 			$table->string('phone');
 			$table->string('email');
+			$table->string('password');
 		});
 	}
 

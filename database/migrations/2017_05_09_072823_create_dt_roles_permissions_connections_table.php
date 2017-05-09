@@ -17,8 +17,8 @@ class CreateDtRolesPermissionsConnectionsTable extends Migration {
 			$table->integer('count', true);
 			$table->timestamps();
 			$table->softDeletes();
-			$table->string('permissions_id', 36)->index('fk_dt_roles_permissions_connections_dt_permissions1_idx');
 			$table->string('roles_id', 36)->index('fk_dt_roles_permissions_connections_dt_roles1_idx');
+			$table->string('permissions_id', 36)->index('fk_dt_roles_permissions_connections_dt_permissions1_idx');
 		});
 	}
 

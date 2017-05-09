@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDtPermissionsTable extends Migration {
+class CreateDtRolesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,14 @@ class CreateDtPermissionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('dt_permissions', function(Blueprint $table)
+		Schema::create('dt_roles', function(Blueprint $table)
 		{
 			$table->integer('count', true);
 			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('name');
+			$table->string('comment')->nullable();
 		});
 	}
 
@@ -30,7 +31,7 @@ class CreateDtPermissionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('dt_permissions');
+		Schema::drop('dt_roles');
 	}
 
 }

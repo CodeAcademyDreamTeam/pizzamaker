@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDtRolesTable extends Migration {
+class CreateDtPizzasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,17 @@ class CreateDtRolesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('dt_roles', function(Blueprint $table)
+		Schema::create('dt_pizzas', function(Blueprint $table)
 		{
 			$table->integer('count', true);
 			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamps();
 			$table->softDeletes();
+			$table->string('cheeses_id', 36)->index('fk_dt_pizzas_dt_cheeses1_idx');
+			$table->string('pads_id', 36)->index('fk_dt_pizzas_dt_pads1_idx');
+			$table->string('user_id', 36)->index('fk_dt_pizzas_dt_users1_idx');
 			$table->string('name');
+			$table->text('comment', 65535)->nullable();
 		});
 	}
 
@@ -30,7 +34,7 @@ class CreateDtRolesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('dt_roles');
+		Schema::drop('dt_pizzas');
 	}
 
 }

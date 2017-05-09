@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDtPizzasTable extends Migration {
+class CreateDtPermissionsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,17 +12,13 @@ class CreateDtPizzasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('dt_pizzas', function(Blueprint $table)
+		Schema::create('dt_permissions', function(Blueprint $table)
 		{
 			$table->integer('count', true);
 			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->string('pads_id', 36)->index('fk_dt_pizzas_dt_pads1_idx');
-			$table->string('cheeses_id', 36)->index('fk_dt_pizzas_dt_cheeses1_idx');
-			$table->string('user_id', 36)->nullable()->index('fk_dt_pizzas_dt_users1_idx');
 			$table->string('name');
-			$table->integer('calories');
 			$table->string('comment')->nullable();
 		});
 	}
@@ -35,7 +31,7 @@ class CreateDtPizzasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('dt_pizzas');
+		Schema::drop('dt_permissions');
 	}
 
 }

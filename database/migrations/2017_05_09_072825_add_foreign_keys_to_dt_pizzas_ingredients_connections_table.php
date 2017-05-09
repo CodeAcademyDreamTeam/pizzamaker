@@ -14,8 +14,8 @@ class AddForeignKeysToDtPizzasIngredientsConnectionsTable extends Migration {
 	{
 		Schema::table('dt_pizzas_ingredients_connections', function(Blueprint $table)
 		{
-			$table->foreign('ingredients_id', 'fk_dt_pizzas_ingredients_connections_dt_ingredients1')->references('id')->on('dt_ingredients')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-			$table->foreign('pizzas_id', 'fk_dt_pizzas_ingredients_connections_dt_pizzas')->references('id')->on('dt_pizzas')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('ingredients_id', 'fk_dt_pizzas_ingredients_connections_dt_ingredients')->references('id')->on('dt_ingredients')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('pizzas_id', 'fk_dt_pizzas_ingredients_connections_dt_pizzas1')->references('id')->on('dt_pizzas')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
 
@@ -29,8 +29,8 @@ class AddForeignKeysToDtPizzasIngredientsConnectionsTable extends Migration {
 	{
 		Schema::table('dt_pizzas_ingredients_connections', function(Blueprint $table)
 		{
-			$table->dropForeign('fk_dt_pizzas_ingredients_connections_dt_ingredients1');
-			$table->dropForeign('fk_dt_pizzas_ingredients_connections_dt_pizzas');
+			$table->dropForeign('fk_dt_pizzas_ingredients_connections_dt_ingredients');
+			$table->dropForeign('fk_dt_pizzas_ingredients_connections_dt_pizzas1');
 		});
 	}
 
