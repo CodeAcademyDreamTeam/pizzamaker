@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DTPads extends CoreModel
 {
-    use SoftDeletes;
 
     /**
      * Table name in database

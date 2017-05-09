@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DTUsers extends CoreModel
 {
-    use SoftDeletes;
+
 
     /**
      * Table name in database

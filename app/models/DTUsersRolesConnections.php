@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DTUsersRolesConnections extends Model
 {
-    use SoftDeletes;
 
     /**
      * Table name in database

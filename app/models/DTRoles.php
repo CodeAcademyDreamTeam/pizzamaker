@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DTRoles extends CoreModel
 {
-    use SoftDeletes;
+
 
     /**
      * Table name in database

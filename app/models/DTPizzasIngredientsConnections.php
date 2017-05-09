@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DTPizzasIngredientsConnections extends Model
 {
-    use SoftDeletes;
+
 
     /**
      * Table name in database

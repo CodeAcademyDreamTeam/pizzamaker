@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DTIngredients extends CoreModel
 {
-    use SoftDeletes;
+
 
     /**
      * Table name in database

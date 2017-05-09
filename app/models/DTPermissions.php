@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DTPermissions extends CoreModel
 {
-    use SoftDeletes;
+
 
     /**
      * Table name in database
