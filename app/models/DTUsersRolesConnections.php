@@ -3,10 +3,12 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class DTUsersRolesConnections extends Model
 {
+
+    protected $updated_at = false;
 
     /**
      * Table name in database
