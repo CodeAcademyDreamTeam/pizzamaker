@@ -16,75 +16,6 @@ Route::get('/', function () {
 });
 
 
-
-
-
-    Route::group(['prefix' => 'cheese'], function() {
-
-        Route::get('/', ['uses' => 'DTCheeseController@index', 'as' => 'app.cheese.list']);
-
-        Route::get('/create', ['uses' => 'DTCheeseController@create', 'as' => 'app.cheese.add']);
-
-        Route::post('/create', ['uses' => 'DTCheeseController@store']);
-
-        Route::group(['prefix' => '{id}'], function() {
-
-            Route::get('/', ['uses' => 'DTCheeseController@show', 'as' => 'app.cheese.edit']);
-
-            Route::get('/edit', ['uses' => 'DTCheeseController@edit']);
-
-            Route::post('/edit', ['uses' => 'DTCheeseController@update']);
-
-            Route::delete('/delete', ['uses' => 'DTCheeseController@destroy', 'as'   => 'app.cheese.delete']);
-
-        });
-    });
-
-
-    Route::group(['prefix' => 'ingredients'], function() {
-
-        Route::get('/', ['uses' => 'DTIngredientsController@index', 'as' => 'app.ingredients.list']);
-
-        Route::get('/create', ['uses' => 'DTIngredientsController@create', 'as' => 'app.ingredients.add']);
-
-        Route::post('/create', ['uses' => 'DTIngredientsController@store']);
-
-        Route::group(['prefix' => '{id}'], function() {
-
-            Route::get('/', ['uses' => 'DTIngredientsController@show', 'as' => 'app.ingredients.edit']);
-
-            Route::get('/edit', ['uses' => 'DTIngredientsController@edit']);
-
-            Route::post('/edit', ['uses' => 'DTIngredientsController@update']);
-
-            Route::delete('/delete', ['uses' => 'DTIngredientsController@destroy', 'as'   => 'app.ingredients.delete']);
-
-        });
-    });
-
-
-    Route::group(['prefix' => 'pads'], function() {
-
-        Route::get('/', ['uses' => 'DTPadsController@index', 'as' => 'app.pads.list']);
-
-        Route::get('/create', ['uses' => 'DTPadsController@create', 'as' => 'app.pads.add']);
-
-        Route::post('/create', ['uses' => 'DTPadsController@store']);
-
-        Route::group(['prefix' => '{id}'], function() {
-
-            Route::get('/', ['uses' => 'DTPadsController@show', 'as' => 'app.pads.edit']);
-
-            Route::get('/edit', ['uses' => 'DTPadsController@edit']);
-
-            Route::post('/edit', ['uses' => 'DTPadsController@update']);
-
-            Route::delete('/delete', ['uses' => 'DTPadsController@destroy', 'as'   => 'app.pads.delete']);
-
-        });
-    });
-
-
     Route::group(['prefix' => 'pizzas'], function() {
 
         Route::get('/', ['uses' => 'DTPizzasController@index', 'as' => 'app.pizzas.list']);
@@ -105,24 +36,6 @@ Route::get('/', function () {
 
         });
     });
-
-
-    Route::group(['prefix' => 'users'], function() {
-
-        Route::get('/', ['uses' => 'DTUsersController@index', 'as' => 'app.users.list']);
-
-        Route::get('/create', ['uses' => 'DTUsersController@create', 'as' => 'app.users.add']);
-
-        Route::post('/create', ['uses' => 'DTUsersController@store']);
-
-        Route::get('/{id}', ['uses' => 'DTUsersController@show', 'as' => 'app.users.show']);
-
-
-    });
-
-
-
-
 
 
 Route::group(['prefix' => 'admin'], function() {
